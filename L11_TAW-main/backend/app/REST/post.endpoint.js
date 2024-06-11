@@ -9,6 +9,20 @@ const postEndpoint = (router) => {
             console.log(error);
         }
     });
+    router.get('/api/posts/:id', async (request, response, next) => {
+        try {
+            const postId = request.params.id;
+            let result = await business.getPostManager().get(postId);
+            if (result) {
+                response.status(200).send(result);
+            } else {
+                response.status(404).send('Post Not Found');
+            }
+        } catch (error) {
+            console.log(error);
+            response.status(500).send('Internal Server Error');
+        }
+    });
 
     router.post('/api/posts', async (request, response, next) => {
         try {

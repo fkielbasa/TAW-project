@@ -23,10 +23,11 @@ export class BlogItemDetailsComponent implements OnInit {
     this.route.paramMap
       .subscribe((params: any) => {
         id = params.get('id');
+        console.log(id)
       });
 
     this.service.getById(id).subscribe((res: any) => {
-      const post = res[0];
+      const post = res;
       this.image = post['image'];
       this.text = post['text'];
     });
