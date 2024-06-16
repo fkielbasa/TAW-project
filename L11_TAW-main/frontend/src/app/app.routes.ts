@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './services/auth.guard';
+import {BlogAddItemComponent} from "./components/blog-add-item/blog-add-item.component";
 
 export const routes: Routes = [
   {
@@ -22,5 +23,9 @@ export const routes: Routes = [
   {
     path: 'signup',
     loadComponent: () => import('./components/signup/signup.component').then(m => m.SignupComponent)
+  },
+  {
+    path: 'addpost',
+    loadComponent: () => import('./components/blog-add-item/blog-add-item.component').then(m => m.BlogAddItemComponent)
   }
 ];
