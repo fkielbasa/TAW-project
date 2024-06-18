@@ -26,6 +26,12 @@ export const routes: Routes = [
   },
   {
     path: 'addpost',
-    loadComponent: () => import('./components/blog-add-item/blog-add-item.component').then(m => m.BlogAddItemComponent)
+    loadComponent: () => import('./components/blog-add-item/blog-add-item.component').then(m => m.BlogAddItemComponent),
+    canActivate: [authGuard]
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];

@@ -19,8 +19,8 @@
       </ul>
       <div class="d-flex">
         <div class="d-flex" *ngIf="!authService.isLoggedIn()">
-          <a class="nav-link" href="#" [routerLink]="['/login']">Login</a>
-          <a class="nav-link" href="#" [routerLink]="['/signup']">SignUp</a>
+          <a class="nav-link p-2" href="#" [routerLink]="['/login']">Login</a>
+          <a class="nav-link p-2" href="#" [routerLink]="['/signup']">SignUp</a>
         </div>
         <button *ngIf="authService.isLoggedIn()" class="btn nav-link" (click)="signOut()">Wyloguj</button>
       </div>
