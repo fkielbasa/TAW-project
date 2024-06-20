@@ -45,11 +45,14 @@ async function createNewOrUpdate(data) {
         }
     });
 }
+async function deleteById(id) {
+    return PostModel.findByIdAndDelete(id).exec();
+}
 
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
-
+    deleteById: deleteById,
     model: PostModel
 };
